@@ -8,16 +8,21 @@
    <title>Adblock Detection</title>
 </head>
 <body>
-   <div class="container">
-      <div class="adblock-detected">
+   <div class="container" id="container">
+      <div class="adblock-detected" id="warningMessage">
          <div class="icon"></div>
          <h2>Adblock Detected</h2>
          <p>We have detected that you are using adblocking plugin in your browser.</p>
          <p>The revenue we earn by the advertisements is used to manage this website, we request you to whitelist our website in your ad blocking plugin.</p>
-         <button class="cancel">Cancel</button>
-         <button class="whitelist">Yes, I'll Whitelist</button>
+         <button class="cancel" onclick="history.back() || window.close()">Cancel</button>
+         <button class="whitelist" onclick="hideMessage()">Yes, I'll Whitelist</button>
       </div>
    </div>
+   <script>
+      function hideMessage() {
+         warningMessage.style.display = 'none';
+      }
+   </script>
    <script src="ads-prebid.js"></script>
 </body>
 </html>
